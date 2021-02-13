@@ -1,0 +1,10 @@
+
+config BOARD_NEW_REF
+    bool "New Reference Board"
+    depends on SOC_GEN_2
+    select SOC_IS_SOCKETED
+
+if BOARD_NEW_REF
+config BOARD
+    default "board_new"
+endif

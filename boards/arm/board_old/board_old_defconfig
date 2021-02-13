@@ -1,0 +1,7 @@
+# Old Refenence Board specific Kconfig Settings
+
+CONFIG_SOC_SERIES_GEN_1=y
+CONFIG_SOC_GEN_1=y
+#
+# Other configurations go here
+#

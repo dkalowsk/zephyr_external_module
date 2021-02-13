@@ -1,0 +1,4 @@
+#
+# Add the ability to source all of the Company SoCs for the Kconfig.defconfig files
+#
+rsource "*/Kconfig.defconfig.series"

@@ -1,0 +1,3 @@
+comment "Zephyr Additions"
+
+rsource "drivers/Kconfig"

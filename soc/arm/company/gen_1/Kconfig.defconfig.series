@@ -1,0 +1,16 @@
+if SOC_SERIES_GEN_1
+
+config SOC_SERIES
+    default "gen1"
+
+config SOC
+    default "gen1_thin" if SOC_IS_SOLDERED
+    default "gen1_heavy" if SOC_IS_SOCKETED
+
+# Additional defines here
+config NUM_IRQS
+    default 240
+
+rsource "Kconfig.defconfig.gen1*"
+
+endif # SOC_SERIES_GEN_1

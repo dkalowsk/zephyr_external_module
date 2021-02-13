@@ -1,0 +1,9 @@
+# SOC FAMILY DEFINES
+choice
+    prompt "Company Gen 2 Steppings"
+    depends on SOC_SERIES_GEN_2
+
+    config SOC_GEN_2_A0
+        bool "A0 Stepping"
+
+endchoice

@@ -1,0 +1,13 @@
+# SOC FAMILY DEFINES
+choice
+    prompt "Company Gen 1 Steppings"
+    depends on SOC_SERIES_GEN_1
+
+    config SOC_GEN_1_A0
+        bool "A0 Stepping"
+    config SOC_GEN_A1
+        bool "A1 Stepping"
+    config SOC_GEN_B0
+        bool "B0 Stepping"
+
+endchoice

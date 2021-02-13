@@ -1,0 +1,12 @@
+if SOC_GEN_1_A0
+
+config SOC_PART_NUMBER
+    string
+
+    default "random_serial_number"
+    help
+      This string holds the full part number of the SoC. It is a hidden option
+      that you should not set directly. The part number selection choice defines
+      the default value for this string.
+
+endif # SOC_GEN_1_A0

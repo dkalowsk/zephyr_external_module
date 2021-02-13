@@ -1,0 +1,7 @@
+# New Reference Board specific Kconfig Settings
+
+CONFIG_SOC_SERIES_GEN_2=y
+CONFIG_SOC_GEN_2=y
+#
+# Other configurations go here
+#

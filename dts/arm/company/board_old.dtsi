@@ -1,0 +1,12 @@
+
+#include <mem.h>
+#include <dt-bindings/mesh/cmn6x0.h>
+
+/ {
+    // add your board DT entries here
+};
+
+
+&nvic {
+    arm,num-irq-priority-bits = <3>;
+};

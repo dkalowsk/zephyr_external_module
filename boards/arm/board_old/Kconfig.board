@@ -1,0 +1,10 @@
+
+config BOARD_OLD_REF
+    bool "Old Reference Board"
+    depends on SOC_GEN_1
+    select SOC_IS_SOCKETED
+
+if BOARD_OLD_REF
+config BOARD
+    default "board_old"
+endif

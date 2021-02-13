@@ -1,0 +1,18 @@
+config SOC_FAMILY_COMPANY
+    bool
+
+if SOC_FAMILY_COMPANY
+
+config SOC_FAMILY
+    string
+    default "company"
+
+config SOC_IS_SOCKETED
+    bool
+    default n
+
+config SOC_IS_SOLDERED
+    bool
+    default n
+
+endif # SOC_FAMILY_COMPANY

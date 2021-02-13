@@ -1,0 +1,4 @@
+#
+# Parse all Company based SoCs and add their Kconfig.soc to the list
+#
+rsource "*/Kconfig.series"

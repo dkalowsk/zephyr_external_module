@@ -1,0 +1,15 @@
+
+config SOC_SERIES_GEN_1
+    bool "Company Gen 1 SoC"
+    select ARM
+    select SOC_FAMILY_COMPANY
+    help
+      Enable support for Company's Gen 1 SoC
+
+if SOC_SERIES_GEN_1
+
+#
+# Additional settings per stepping
+#
+
+endif # SOC_SERIES_GEN_1

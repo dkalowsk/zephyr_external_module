@@ -1,7 +1,9 @@
 if SOC_SERIES_GEN_1
 
 config SOC_SERIES
-    default "gen1"
+    default "gen_1"
+    # This path is used to construct the path at:
+    # https://github.com/zephyrproject-rtos/zephyr/blob/4004665fa77d223838d48b0758c90da86170b7eb/cmake/app/boilerplate.cmake#L546
 
 config SOC
     default "gen1_thin" if SOC_IS_SOLDERED

@@ -1,4 +1,7 @@
 # SOC FAMILY DEFINES
+config SOC_GEN_1
+  bool "Support for all SoCs of Gen 1"
+
 choice
     prompt "Company Gen 1 Steppings"
     depends on SOC_SERIES_GEN_1

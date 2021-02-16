@@ -4,8 +4,6 @@ cmake_minimum_required(VERSION 3.13.1)
 
 set(BOARD board_old)
 
-list(APPEND ZEPHYR_EXTRA_MODULES "${PRODUCT_MODULE_ROOT}")
-
 find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
 project(hello_world)
 

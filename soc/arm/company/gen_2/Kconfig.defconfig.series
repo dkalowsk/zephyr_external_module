@@ -2,6 +2,8 @@ if SOC_SERIES_GEN_2
 
 config SOC_SERIES
     default "gen_2"
+    # This path is used to construct the path at:
+    # https://github.com/zephyrproject-rtos/zephyr/blob/4004665fa77d223838d48b0758c90da86170b7eb/cmake/app/boilerplate.cmake#L546
 
 config SOC
     default "gen2_thin" if SOC_IS_SOLDERED
@@ -11,6 +13,6 @@ config SOC
 config NUM_IRQS
     default 240
 
-rsource "*/Kconfig.defconfig.gen2_*"
+rsource "Kconfig.defconfig.gen2_*"
 
 endif # SOC_SERIES_GEN_2

@@ -8,9 +8,9 @@ choice
 
     config SOC_GEN_1_A0
         bool "A0 Stepping"
-    config SOC_GEN_A1
+    config SOC_GEN_1_A1
         bool "A1 Stepping"
-    config SOC_GEN_B0
+    config SOC_GEN_1_B0
         bool "B0 Stepping"
 
 endchoice

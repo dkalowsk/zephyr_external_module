@@ -1,0 +1,18 @@
+manifest:
+  remotes:
+    - name: github
+      url-base: https://github.com
+  projects:
+#
+# Zephyr Specific defines
+#
+    - name: zephyr
+      remote: github
+      repo-path: zephyrproject-rtos/zephyr
+      import:
+        name-whitelist:
+          - cmsis
+          - littlefs
+          - mbedtls
+      west-commands: scripts/west-commands.yml
+      revision: v2.5.0

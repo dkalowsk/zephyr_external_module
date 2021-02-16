@@ -13,6 +13,6 @@ config SOC
 config NUM_IRQS
     default 240
 
-rsource "Kconfig.defconfig.gen1*"
+rsource "*/Kconfig.defconfig.gen1_*"
 
 endif # SOC_SERIES_GEN_1

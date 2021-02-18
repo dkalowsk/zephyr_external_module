@@ -16,3 +16,7 @@ manifest:
           - mbedtls
       west-commands: scripts/west-commands.yml
       revision: v2.5.0
+
+  self:
+    path: zephyr_external_module
+

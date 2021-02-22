@@ -10,7 +10,6 @@ if [[ -n "${DEBUG_SCRIPT:-}" ]]; then
     export
 fi
 
-readonly ARTIFACTS=( secpro_romfw secpro_ramfw mpro_ram )
 readonly ZEPHYR_SDK_INSTALL_DIR=${ZEPHYR_SDK_INSTALL_DIR:-"/opt/toolchains/zephyr-sdk-0.12.2"}
 readonly ZEPHYR_TOOLCHAIN_VARIANT=${ZEPHYR_TOOLCHAIN_VARIANT:-zephyr}
 
@@ -19,25 +18,7 @@ readonly OUTPUT_DIR="${PROJECT_REPO}/output"
 TOP_DIR=$(dirname "$PROJECT_REPO")
 DEBUG_ENABLED="0"
 
-_die() {
-    msg="$*"
-    echo "ERROR: $msg" >&2 && exit 1
-}
-
-_array_contains() {
-    local seeking=$1; shift
-    local in=1
-
-    for element; do
-        if [[ ${element} == "${seeking}" ]]; then
-            in=0
-            break
-        fi
-    done
-    return $in
-}
-
-cmd_clean()
+project_clean()
 {
     pushd "$PROJECT_REPO" > /dev/null
 
@@ -48,7 +29,7 @@ cmd_clean()
     popd > /dev/null
 }
 
-build_project()
+project_build()
 {
 
     export ZEPHYR_TOOLCHAIN_VARIANT
@@ -72,27 +53,12 @@ build_project()
 
     pushd "$PROJECT_REPO/applications/hello_world" > /dev/null
 
-    west build \
+    west build -t menuconfig \
         -d "${BUILD_MODE_OUTPUT}/hello_world" -- \
         ${cmake_options} .
 
     popd > /dev/null
 }
 
-if [ $# == 0 ]; then
-    _die "Command missing"
-fi
-
-# parse cmdline options
-while [ $# -gt 0 ]; do
-    case "$1" in
-        build)        { build_project ; exit 0;      } ;;
-        clean)        { cmd_clean; exit 0;      } ;;
-        -d) { DEBUG_ENABLED="1";                } ;;
-        -*|*)
-            cmd_help
-            _die "Unknown argument"
-            ;;
-    esac
-    shift
-done
+project_clean
+project_build

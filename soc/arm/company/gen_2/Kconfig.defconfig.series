@@ -6,8 +6,8 @@ config SOC_SERIES
     # https://github.com/zephyrproject-rtos/zephyr/blob/4004665fa77d223838d48b0758c90da86170b7eb/cmake/app/boilerplate.cmake#L546
 
 config SOC
-    default "gen2_thin" if SOC_IS_SOLDERED
-    default "gen2_heavy" if SOC_IS_SOCKETED
+    default "gen_2_fpu" if SOC_HAS_FPU
+    default "gen_2_test" if SOC_IS_SOCKETED
 
 # Additional defines here
 config NUM_IRQS

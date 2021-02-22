@@ -13,7 +13,7 @@ config SOC_IS_SOCKETED
     bool
     default n
 
-config SOC_IS_SOLDERED
+config SOC_HAS_FPU
     bool
     default n
 
